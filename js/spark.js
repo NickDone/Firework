@@ -1,5 +1,3 @@
-
-
 /**
  *spark of a piece
  *
@@ -71,17 +69,17 @@ Spark.prototype.show=function(){
     var startAngle=0;
     var tailAngle=dir0;
     if(this.xSpeed>0&&this.ySpeed>0){
-        startAngle= Math.PI*0.5-dir0;
-        tailAngle=dir0+Math.PI*1.5;
+        startAngle= constant.PIHalf-dir0;
+        tailAngle=dir0+constant.PI1Half;
     }else if(this.xSpeed<0&&this.ySpeed>0){
-        startAngle= Math.PI*1.5+dir0;
-        tailAngle=Math.PI*0.5-dir0;
+        startAngle= constant.PI1Half+dir0;
+        tailAngle=constant.PIHalf-dir0;
     }else if(this.xSpeed<0&&this.ySpeed<0){
-        startAngle=Math.PI*1.5-dir0;
-        tailAngle=Math.PI*0.5+dir0;
+        startAngle=constant.PI1Half-dir0;
+        tailAngle=constant.PIHalf+dir0;
     }else if(this.xSpeed>0&&this.ySpeed<0){
-        startAngle=Math.PI*0.5+dir0;
-        tailAngle=Math.PI*1.5 -dir0;
+        startAngle=constant.PIHalf+dir0;
+        tailAngle=constant.PI1Half -dir0;
     }
 
     if(this.xSpeed==0){
@@ -114,7 +112,7 @@ Spark.prototype.show=function(){
  *spart transform with the speed ,time ,
  */
 Spark.prototype.transform=function(){
-    if((this.dir>0&&this.dir<Math.PI/2)||(this.dir>Math.PI*1.5&&this.dir<Math.PI*2)){
+    if((this.dir>0&&this.dir<constant.PIHalf)||(this.dir>constant.PI1Half&&this.dir<constant.PI2)){
         this.xSpeed=this.xSpeed-this.k>=0?this.xSpeed-this.k:0;
     }
     else{
